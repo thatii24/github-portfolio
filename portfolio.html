@@ -685,6 +685,31 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skills-column h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .skills-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .skills {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -712,7 +737,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm <span>Thatila Wijayathunga</span><br>Full Stack Developer</h1>
+                <h1>Hi, I'm <br><span>Thatila Wijayathunga</span><br>Full Stack Developer</h1>
                 <p>I create beautiful, functional websites and applications with modern technologies. Let's build
                     something amazing together.</p>
                 <div class="btn-group">
@@ -734,27 +759,50 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                        alt="Alex Morgan">
+                    <img src="./img/01.jpg" alt="Thatila Wijayathunga">
                 </div>
                 <div class="about-text fade-in">
                     <h3>Full Stack Developer & UI/UX Enthusiast</h3>
-                    <p>With over 5 years of experience in web development, I specialize in creating responsive,
+                    <p>With over 1 years of experience in web development, I specialize in creating responsive,
                         user-friendly websites and applications. My passion lies in solving complex problems with
                         elegant solutions.</p>
                     <p>I'm proficient in HTML, CSS, JavaScript, React, Node.js, and various backend technologies. I
                         enjoy staying up-to-date with the latest industry trends and continuously expanding my skill
                         set.</p>
                     <div class="skills">
-                        <span class="skill">HTML/CSS</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">React</span>
-                        <span class="skill">Node.js</span>
-                        <span class="skill">PHP</span>
-                        <span class="skill">Java</span>
-                        <span class="skill">MySQL</span>
-                        <span class="skill">MongoDB</span>
-                        <span class="skill">UI/UX Design</span>
+                        <div class="skills-column">
+                            <h4>Web Development</h4>
+                            <span class="skill">HTML/CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">React</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill">PHP</span>
+                            <span class="skill">Java</span>
+                            <span class="skill">MySQL</span>
+                            <span class="skill">UI/UX Design</span>
+                        </div>
+                        <div class="skills-column">
+                            <h4>Graphic Designing</h4>
+                            <span class="skill">Photoshop</span>
+                            <span class="skill">Illustrator</span>
+                            <span class="skill">Indesign</span>
+                            <span class="skill">canva</span>
+                            <span class="skill">Affinity</span>
+                            <span class="skill">Figma</span>
+                        </div>
+                        <div class="skills-column">
+                            <h4>Video Editing</h4>
+                            <span class="skill">Premiere Pro</span>
+                            <span class="skill">Davinci Resolve</span>
+                            <span class="skill">Capcut</span>
+                            <span class="skill">Wandershare Filmora</span>
+                        </div>
+                        <div class="skills-column">
+                            <h4>3D Modeling & Game Development</h4>
+                            <span class="skill">Blender</span>
+                            <span class="skill">Godot</span>
+                            <span class="skill">Unity</span>
+                        </div>
                     </div>
                 </div>
             </div>
