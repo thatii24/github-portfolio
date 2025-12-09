@@ -8,74 +8,81 @@ It’s my digital flex. 😎
 🚀 Live Demo
 
 Coming soon / or add your website link here
+
 👉 [https://your-portfolio-link.com](https://github.com/thatii24/github-portfolio/blob/main/portfolio.html)
 
 🧠 About the Project
 
 This project is a fully custom-built portfolio website designed with:
 
-Smooth animations
+  Smooth animations
 
-Responsive layouts
+  Responsive layouts
 
-Clean UI/UX
+  Clean UI/UX
 
-Organized sections (Home, About, Services, Portfolio, Contact)
+  Organized sections (Home, About, Services, Portfolio, Contact)
 
 Perfect for personal branding, client showcases, and job applications.
 
 🛠️ Tech Stack
-Frontend
+  Frontend
 
-HTML5
+  HTML5
 
-CSS3
+  CSS3
 
-JavaScript (Vanilla)
+  JavaScript (Vanilla)
 
-Font Awesome Icons
+  Font Awesome Icons
 
-Responsive Grid + Flexbox
+  Responsive Grid + Flexbox
 
 Other Features
 
-Custom animations
+  Custom animations
 
-Smooth scrolling
+  Smooth scrolling
 
-Mobile-friendly navbar
+  Mobile-friendly navbar
 
-Filterable portfolio section
+  Filterable portfolio section
 
-Clean folder structure
+  Clean folder structure
 
 📂 Project Structure
 root
 │── index.html
+
 │── style.css  (Inside HTML or external)
+
 │── /img
+
 │     └── image files used in the portfolio
+
 │── /js
+
 │     └── script.js (if added)
+
 │── README.md
 
 ✨ Features
 
-Fully responsive design
+  Fully responsive design
 
-Modern hero section
+  Modern hero section
 
-About section with skills grid
+  About section with skills grid
 
-Services with animated cards
+  Services with animated cards
 
-Portfolio filter buttons
+  Portfolio filter buttons
 
-Contact form layout
+  Contact form layout
 
-Back-to-top floating button
+  Back-to-top floating button
 
-Smooth fade-in animations
+  Smooth fade-in animations
 
 📸 Preview
 
@@ -85,28 +92,28 @@ Smooth fade-in animations
 
 ⚡ How to Use
 
-Clone the repository:
+01.Clone the repository:
 
-git clone https://github.com/thatii24/github-portfolio.git
+  git clone https://github.com/thatii24/github-portfolio.git
 
 
-Open index.html in your browser.
+02.Open index.html in your browser.
 
-Customize the content:
+03.Customize the content:
 
-Replace images in /img
+   Replace images in /img
 
-Update text in HTML
+   Update text in HTML
 
-Modify colors via :root variables
+   Modify colors via :root variables
 
-Deploy anywhere:
+04.Deploy anywhere:
 
-GitHub Pages
+   GitHub Pages
 
-Netlify
+   Netlify
 
-Vercel
+   Vercel
 
 📬 Contact Me
 
