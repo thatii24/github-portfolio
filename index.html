@@ -258,23 +258,38 @@
                     </div>
                 </div>
                 <div class="contact-form fade-in">
-                    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                    <!--<form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
 
-                        <!-- Your Access Key (REQUIRED) -->
+                         Your Access Key (REQUIRED) 
                         <input type="hidden" name="access_key" value="9e241435-3798-4c15-a831-ef7b4e5a4214">
 
-                        <!-- Your Form Fields (Make sure each has a 'name' attribute) -->
+                         Your Form Fields (Make sure each has a 'name' attribute) 
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <input type="text" name="subject" placeholder="Subject" required>
                         <textarea name="message" placeholder="Your Message" required></textarea>
 
-                        <!-- Honeypot Spam Protection (Recommended) -->
+                        Honeypot Spam Protection (Recommended)
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                        <!-- Submit Button -->
+                         Submit Button 
                         <button type="submit">Send Message</button>
 
+                    </form> -->
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
             </div>
