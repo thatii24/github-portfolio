@@ -66,16 +66,20 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Form Submission - Web3Forms handles submission natively
+// Form Submission
 const contactForm = document.getElementById('contactForm');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        // Let Web3Forms handle the submission naturally
-        // This allows the form to redirect on success
-        console.log('Form submitted to Web3Forms');
-    });
-}
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Simulate form submission
+    const formData = new FormData(contactForm);
+    const name = formData.get('name') || 'User'; // Fallback if fields are empty
+
+    // Show success message
+    alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+    contactForm.reset();
+});
 
 // Fade-in Animation on Scroll
 const fadeElements = document.querySelectorAll('.fade-in');
