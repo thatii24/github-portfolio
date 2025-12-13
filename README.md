@@ -9,7 +9,7 @@ It’s my digital flex. 😎
 
 Coming soon / or add your website link here
 
-👉 [https://your-portfolio-link.com](https://github.com/thatii24/github-portfolio/blob/main/portfolio.html)
+👉 https://github.com/thatii24/github-portfolio/blob/main/index.html
 
 🧠 About the Project
 
