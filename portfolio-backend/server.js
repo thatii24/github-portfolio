@@ -1,48 +1,76 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 require('dotenv').config();
-
-const contactRoutes = require('./routes/contact');
-const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
-// Security middleware
-app.use(helmet());
+// Allow your GitHub Pages site to connect
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: ['https://yourusername.github.io', 'http://localhost:3000'],
     credentials: true
 }));
 
-// Rate limiting
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests per windowMs
-});
-app.use('/api/', limiter);
-
-// Body parser middleware
+// Parse JSON
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio', {
+// MongoDB Connection
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-    .then(() => console.log('MongoDB connected successfully'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .then(() => console.log('✅ MongoDB Connected'))
+    .catch(err => console.error('❌ MongoDB Error:', err));
+
+// Contact Schema
+const contactSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    subject: { type: String, required: true },
+    message: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Contact = mongoose.model('Contact', contactSchema);
 
 // Routes
-app.use('/api/contact', contactRoutes);
+app.post('/api/contact/submit', async (req, res) => {
+    try {
+        const { name, email, subject, message } = req.body;
 
-// Error handling middleware
-app.use(errorHandler);
+        // Simple validation
+        if (!name || !email || !subject || !message) {
+            return res.status(400).json({
+                success: false,
+                message: 'All fields are required'
+            });
+        }
+
+        // Save to database
+        const newContact = new Contact({ name, email, subject, message });
+        await newContact.save();
+
+        res.status(201).json({
+            success: true,
+            message: 'Thank you! Your message has been sent.',
+            data: { name, email }
+        });
+
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Server error. Please try again later.'
+        });
+    }
+});
+
+// Health check
+app.get('/', (req, res) => {
+    res.send('✅ Portfolio Backend is running!');
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
 });
