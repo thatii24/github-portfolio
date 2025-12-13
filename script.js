@@ -67,41 +67,33 @@ backToTopButton.addEventListener('click', () => {
 });
 
 // Form Submission
-// Update the form submission handler in your existing HTML file
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+const contactForm = document.getElementById('contactForm');
 
-    // Get form data
-    const formData = {
-        name: contactForm.querySelector('input[placeholder="Your Name"]').value,
-        email: contactForm.querySelector('input[placeholder="Your Email"]').value,
-        subject: contactForm.querySelector('input[placeholder="Subject"]').value,
-        message: contactForm.querySelector('textarea').value
-    };
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    try {
-        // Send to backend
-        const response = await fetch('http://localhost:5000/api/contact/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
+        try {
+            // Send form data to Web3Forms
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(contactForm)
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        if (response.ok) {
-            alert(data.message || 'Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        } else {
-            alert(data.message || 'An error occurred. Please try again.');
+            if (data.success) {
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            } else {
+                alert('An error occurred. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Network error. Please check your connection and try again.');
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Network error. Please check your connection and try again.');
-    }
-});
+    });
+}
 
 // Fade-in Animation on Scroll
 const fadeElements = document.querySelectorAll('.fade-in');
